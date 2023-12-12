@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+      <form action="/update" method="post" >
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>Form</p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="fname" value="<%= data[0].fname %>" >
+                    <input type="hidden" class="form-control" name="id" value="<%= data[0].id %>" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lname" value="<%= data[0].lname %>" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">email</label>
+                    <input type="text" class="form-control" name="email" value="<%= data[0].email %>" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Gender</label>
+                    Male<input type="radio"  name="gender" value="Male" <% if (data[0].gender=='Male') { %> checked <% } %>  >
+                    Female<input type="radio"  name="gender" value="Female" <% if (data[0].gender=='Female') { %> checked <% } %> >
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">message</label>
+                    <textarea class="form-control" name="message" rows="3"><%= data[0].message %></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <input type="submit" class="btn btn-primary" value="Submit" name="submit" />
+                  </div>
+        </div>
+        </div>
+    </form>
+       <%= JSON.stringify(data) %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
